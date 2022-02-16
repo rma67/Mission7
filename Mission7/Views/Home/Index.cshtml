@@ -1,0 +1,28 @@
+﻿@{
+}
+
+@model BooksViewModel
+
+<h1>Bookstore</h1>
+
+@*This loop takes the info from the models and prints them on the page for each book in the database*@
+
+@foreach (Book b in Model.Books)
+{
+    <h3>Book Title: @b.Title</h3>
+
+    <ul>
+        <li>Author: @b.Author</li>
+        <li>Publisher: @b.Publisher</li>
+        <li>ISBN: @b.Isbn</li>
+        <li>Classification: @b.Classification</li>
+        <li>Category: @b.Category</li>
+        <li>Number of Pages: @b.PageCount</li>
+        <li>Price: $@b.Price</li>
+    </ul>
+
+    <br />
+}
+
+@*This accesses the pageinfo model, which makes links on the page dynamically*@
+<div page-blah="@Model.PageInfo" page-action="Index"></div>
