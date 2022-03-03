@@ -5,12 +5,36 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 
-    <link href="~/lib/css/bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
+
 <body>
-    <div class="main">
-        @RenderBody()
+
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">BOOK STORE</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-1 p-1">
+
+        <div id="types" class="col-3">
+            <vc:category></vc:category>
+        </div>
+
+        <div class="col-9">
+            <div class="main">
+                @RenderBody()
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
